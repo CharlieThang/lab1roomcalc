@@ -5,47 +5,41 @@ import java.util.Scanner;
  * 1/30/2017
  * This Utility Calculates The Perimeters Of A Room
  */
-public class RoomCalc{
-    public static void main (String [] args) {
-        //1. set up resources
+public class RoomCalc {
+    public static void main(String[] args) {
+        //1. Set Up Resources
         Scanner charscan = new Scanner(System.in);
 
-        //2. purpose of this utility
-        System.out.println("This Is A Room Calculator Utility");
 
-        //3. ask for input
-        System.out.print("Please enter length of rectangle: ");
-        double length = charscan.nextDouble();
+        //2. State Purpose Of Utility
+        System.out.println("This Is A Room Area Calculator Utility");
 
-        System.out.print("Please enter width of rectangle: ");
-        double width = charscan.nextDouble();
+        //3. Request User Input
+        String text = "";
 
-        System.out.print("Do You Want To Continue?, Y/N");
-        String user_input charscan.next();
+        //This Is A "Do Loop", It Allows User To Start Over If Necessary
 
-                double Perimeter = (length * 2 + width * 2);
+        do {
 
-                //4. perform calculations
-                double RoomCalc = length * 2 + width * 2;
+            System.out.print("Please Enter Length Of Rectangle: ");
+            double length = charscan.nextDouble();
 
-                //5. output results
-                System.out.println("The Perimeter is " + RoomCalc);
+            System.out.print("Please Enter Width Of Rectangle: ");
+            double width = charscan.nextDouble();
 
-                //6. close out resources
-                charscan.close();
+            double area = length * width;
+            double perimeter = length * 2 + width * 2;
 
-                System.out.println("Length:" + length);
-                System.out.println("Width:" + width);
-                System.out.println("Area:" + length * width);
-                System.out.println("Perimeter:" + RoomCalc);
+            System.out.println("Area Is:" + length * width);
+            System.out.println("Perimeter Is:" + length * 2 + width * 2);
+            System.out.println("");
 
-            }
+            System.out.print("Do You Want To Continue?, Y/N");
+            text = charscan.next();
+        }
+        while (text.equals("N"));
+        System.out.print("See Ya Later Alligator!");
 
-
-
-
+        charscan.close();
+    }
 }
-
-
-
-
